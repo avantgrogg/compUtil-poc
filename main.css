@@ -1,0 +1,17 @@
+.dom-header{
+    background-color: lightblue;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.dom-header ul{
+    list-style: none;
+}
+
+.dom-header ul li{
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 40px;
+    cursor: pointer;
+}
