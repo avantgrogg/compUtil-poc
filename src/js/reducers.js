@@ -11,7 +11,11 @@ export function demoApp(state = {}, action) {
 function page(state = {}, action) {
     switch(action.type) {
         case CHANGE_PAGE:
-            return action.payload.pageValue;
+            return Object.assign(
+                {}, state, {
+                    currentPage: action.payload.pageValue
+                }
+            )
         default:
             return state;
     }

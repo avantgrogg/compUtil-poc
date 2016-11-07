@@ -19,7 +19,7 @@ export function yesNoResponse(response = {}) {
         payload: {
             response
         }
-    }
+    };
 }
 
 export function responseBuffer(response = '...') {
@@ -28,7 +28,7 @@ export function responseBuffer(response = '...') {
         payload: {
             response
         }
-    }
+    };
 }
 
 export function decrement() {

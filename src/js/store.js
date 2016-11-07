@@ -4,12 +4,14 @@ import createLogger from 'redux-logger';
 const logger = createLogger();
 
 const initialState = {
-    page: 'counter',
+    page: { 
+        currentPage: 'counter'
+    },
     counter: {
         count: 0
     },
     yesNo: {
-        response: 'Ask me a question',
+        response: '',
         image: ''
     }
 };

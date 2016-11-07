@@ -1,6 +1,6 @@
 <div class="dom-header">
     <ul>
-        <li class="page-value" data-page-name="counter">Counter</li>
-        <li class="page-value" data-page-name="yesno">Yes or No</li>
+        <li class="page-value {% if page.currentPage == 'counter' %} selected {% endif %}" data-page-name="counter">Counter</li>
+        <li class="page-value {% if page.currentPage == 'yesno' %} selected {% endif %}" data-page-name="yesno">Yes or No</li>
     </ul>
 </div>

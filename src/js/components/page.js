@@ -18,7 +18,7 @@ export function init(store = {}, overrides = {}) {
         template: pageTemplate,
         afterConstruction: afterConstruction,
         templateLocation: '.dom-page',
-        watch: 'page',
+        watch: 'page.currentPage',
         rebind: true,
         afterRender: afterRender,
         onStateChange: onStateChange
@@ -31,11 +31,11 @@ export function afterConstruction(store) {
     this.render(store.getState, this, {}, store);
 }
 
-export function onStateChange(store) {
+export function onStateChange(store, watch, oldVal, newVal) {
     this.render(store.getState, this, {}, store);
 }
 
 export function afterRender(store) {
-    const currentPage = store.getState().page;
+    const currentPage = store.getState().page.currentPage;
     this.addChild(router[currentPage], store);
 }

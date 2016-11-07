@@ -19,10 +19,13 @@ export function init(store = {}, overrides = {}) {
 
 export function attachEvents(store) {
     document.getElementsByClassName('yes-no-input')[0].addEventListener('keyup', debounce((e) => {
-        if(!e.target.value.includes('?')) {
+        if(e.target.value.length < 1) {
+            store.dispatch(responseBuffer(''));
+            return;
+        } else if(!e.target.value.includes('?')) {
             store.dispatch(responseBuffer('Gonna need a question mark...'));
             return;
-        }
+        } 
         store.dispatch(responseBuffer('Alright, here we go...'));
         fetch('https://yesno.wtf/api')
             .then((response) => response.json())
