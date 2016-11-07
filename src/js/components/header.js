@@ -1,3 +1,6 @@
+/**
+ * This component is used to add event binding to the header.
+ */
 import { generate } from '../lib/componentUtil';
 import { headerTemplate } from '../templates/header.j2';
 import { changePage } from '../actions';
