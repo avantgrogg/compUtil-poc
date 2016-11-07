@@ -8,7 +8,8 @@ export function init(store = {}, overrides = {}) {
         attachEvents: attachEvents,
         template: counterTemplate,
         templateLocation: '.dom-counter',
-        watch: 'counter.count'
+        watch: 'counter.count',
+        afterRebind: afterRebind
     };
 
     generate(config, store, overrides);
@@ -28,5 +29,10 @@ export function attachEvents(store) {
 }
 
 export function onStateChange(store) {
-    this.render(store.getState, this);
+    this.render(store.getState, this, {}, store);
+}
+
+export function afterRebind(store) {
+    debugger;
+    this.attachEvents(store);
 }

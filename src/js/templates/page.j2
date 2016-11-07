@@ -1,4 +1,8 @@
 <div class="dom-page">
     {% include './header.j2' %}
-    {% include './counter.j2' %}
+    {% if page == 'counter' %}
+        {% include './counter.j2' %}
+    {% elif page == 'yesno' %}
+        {% include './yesno.j2' %}
+    {% endif %}
 </div>
