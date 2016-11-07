@@ -17,11 +17,13 @@ export function init(store = {}, overrides = {}) {
 export function attachEvents(store) {
     document.getElementsByClassName('decrement')[0].addEventListener(
         'click', (e) => {
+            e.preventDefault();
             store.dispatch(decrement());
         }
     );
     document.getElementsByClassName('increment')[0].addEventListener(
         'click', (e) => {
+            e.preventDefault();
             store.dispatch(increment());
         }
     );
